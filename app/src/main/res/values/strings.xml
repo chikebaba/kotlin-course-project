@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">kotlin-course-project</string>
+    <string name="app_name">Rick Morty Showcase</string>
     <string name="title_characters">Characters</string>
     <string name="title_locations">Locations</string>
     <string name="title_episodes">Episodes</string>
