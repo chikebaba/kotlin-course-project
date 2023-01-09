@@ -23,10 +23,4 @@ interface RickAndMortyRepository {
     suspend fun getAllLocation(): Flow<PagingData<LocationDomain>>
 
     suspend fun getAllEpisode(): Flow<PagingData<EpisodeDomain>>
-
-    suspend fun getAllFavoriteCharacters(): Flow<List<CharactersDomain>>
-
-    suspend fun insertMyFavoriteList(character: CharactersDomain)
-
-    suspend fun deleteCharacterFromMyFavoriteList(character: CharactersDomain)
 }
