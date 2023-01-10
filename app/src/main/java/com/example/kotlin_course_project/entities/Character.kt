@@ -6,11 +6,11 @@ import androidx.room.PrimaryKey
 import java.io.Serializable
 
 @Entity(tableName = "characters")
-data class Character(
-    val created: String,
-    val gender: String,
+data class CharacterRoomEntity(
     @PrimaryKey
     val id: Int,
+    val created: String,
+    val gender: String,
     val image: String,
     val name: String,
     val species: String,
