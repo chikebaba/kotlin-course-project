@@ -13,7 +13,7 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
-
+import retrofit2.converter.gson.GsonConverterFactory
 
 val moshi: Moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
@@ -26,7 +26,7 @@ object AppModule {
     fun provideRickyAndMortyApi(): RickyAndMortyApi {
         return Retrofit.Builder()
             .baseUrl("https://rickandmortyapi.com/api")
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(RickyAndMortyApi::class.java)
     }
