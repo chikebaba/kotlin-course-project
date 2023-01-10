@@ -12,7 +12,7 @@ import com.example.kotlin_course_project.domain.LocationDomain
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class RickAndMortyImpl @Inject constructor(
+class RickAndMortyRepositoryImpl @Inject constructor(
     val api: RickyAndMortyApi,
     private val dao: RickAndMortyDao
 ) : RickAndMortyRepository {
