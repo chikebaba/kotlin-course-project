@@ -20,31 +20,3 @@ data class CharacterData(
     val url: String,
     val created: String
 )
-
-fun Flow<PagingData<CharacterData>>.toCharactersDomain(list: List<CharactersDomain>): Flow<PagingData<CharactersDomain>> {
-
-    return map { pagingData ->
-        pagingData.map { characterData ->
-            CharactersDomain(
-                id = characterData.id,
-                name = characterData.name,
-                status = characterData.status,
-                gender = characterData.gender,
-                image = characterData.image,
-                species = characterData.species,
-                isFavorite = list.contains(characterData.toCharactersDomain())
-            )
-        }
-    }
-}
-
-fun CharacterData.toCharactersDomain(): CharactersDomain {
-    return CharactersDomain(
-        id = id,
-        name = name,
-        status = status,
-        gender = gender,
-        image = image,
-        species = species
-    )
-}
