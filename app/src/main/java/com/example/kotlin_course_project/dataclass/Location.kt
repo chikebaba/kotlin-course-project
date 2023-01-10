@@ -1,6 +1,6 @@
 package com.example.kotlin_course_project.dataclass
 
-data class Location(
+data class LocationData(
     val name: String,
     val url: String
 )
