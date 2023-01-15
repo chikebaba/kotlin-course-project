@@ -40,10 +40,11 @@ class CharacterDetailFragment : Fragment() {
         viewModel.setCharacterId(characterID)
         viewModel.getCharacterInvoke()
 
-        binding.recyclerViewEpisode.layoutManager = LinearLayoutManager(requireContext())
-        binding.recyclerViewEpisode.adapter = adapter
+binding.apply {
+        recyclerViewEpisode.layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewEpisode.adapter = adapter
 
-        binding.locationGroup.setOnClickListener {
+        locationGroup.setOnClickListener {
             val locationUrl = viewModel.getLocationUrl()
 
             locationUrl?.let {
@@ -57,10 +58,10 @@ class CharacterDetailFragment : Fragment() {
                 }
             }
         }
-        binding.imageButton.setOnClickListener {
+        imageButton.setOnClickListener {
             findNavController().popBackStack()
         }
-        return binding.root
+        return root
     }
     private fun navigateToLocationDetail(locationID: Int) {
         val action =
