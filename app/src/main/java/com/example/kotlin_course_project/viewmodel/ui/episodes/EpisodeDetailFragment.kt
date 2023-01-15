@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.kotlin_course_project.databinding.FragmentEpisodeDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class EpisodeDetailFragment : Fragment() {
 
@@ -21,14 +20,12 @@ class EpisodeDetailFragment : Fragment() {
     private val episodeDetailArgs: EpisodeDetailFragmentArgs by navArgs()
     private val viewModel: EpisodeDetailViewModel by viewModels()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentEpisodeDetailBinding.inflate(layoutInflater, container, false)
-
 
         binding.lifecycleOwner = viewLifecycleOwner
         val episodeId = episodeDetailArgs.episodeId
@@ -43,10 +40,8 @@ class EpisodeDetailFragment : Fragment() {
         binding.imageButton.setOnClickListener {
             findNavController().popBackStack()
         }
-
         return binding.root
     }
-
 
     private fun prepareAdapter() {
         val adapter = LocationDetailAdapter(
@@ -56,8 +51,6 @@ class EpisodeDetailFragment : Fragment() {
         )
 
         binding.recyclerView.adapter = adapter
-
-
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), spanCount)
 
     }
@@ -71,7 +64,6 @@ class EpisodeDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDestroyView() {
