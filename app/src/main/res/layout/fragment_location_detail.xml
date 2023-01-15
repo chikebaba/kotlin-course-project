@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.kotlin_course_project.viewmodel.ui.locations.LocationDetailViewModel" />
@@ -96,7 +95,6 @@
                         android:textSize="16sp"
                         tools:text="Space station" />
 
-
                     <TextView
                         android:id="@+id/locationName"
                         android:layout_width="match_parent"
@@ -107,23 +105,14 @@
                         android:textColor="@color/basic_black"
                         tools:text="Citadel of Ricks" />
 
-
                 </LinearLayout>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
-
         </com.google.android.material.appbar.AppBarLayout>
-
-
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-
 
             <TextView
                 android:id="@+id/textView7"
@@ -148,7 +137,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <ProgressBar
@@ -163,6 +151,5 @@
                 app:layout_constraintTop_toTopOf="@+id/recyclerView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
