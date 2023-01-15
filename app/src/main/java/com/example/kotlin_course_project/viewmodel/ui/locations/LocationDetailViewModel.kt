@@ -22,42 +22,31 @@ class LocationDetailViewModel @Inject constructor(
     val state: StateFlow<LocationDetailState> get() = _state
 
     init {
-
     }
-
     fun getLocationInfo() {
-
         if (_state.value.characterList==null){
             try {
                 _state.value = _state.value.copy(
                     isLoading = true
                 )
                 viewModelScope.launch {
-
                     val data = repository.getLocationDetailById(getLocationId()).toLocationByIdDomain()
-
                     _state.value = _state.value.copy(
                         locationInfo = data
                     )
-
                     val characterList = mutableListOf<CharactersDomain>()
                     data.residents.forEach {
                         val characterID = (it.split("/"))[5].toInt()
                         val characters = repository.getCharacterDetailById(characterID)
-
                         characterList.add(characters.toCharactersDomain())
                     }
                     _state.value = _state.value.copy(
                         isLoading = false
                     )
-
                     _state.value = _state.value.copy(
                         characterList = characterList
                     )
-
-
                 }
-
             }catch (e: Exception){
                 _state.value = _state.value.copy(
                     error = "Error"
@@ -68,8 +57,6 @@ class LocationDetailViewModel @Inject constructor(
                 )
             }
         }
-
-
     }
 
     fun setLocationID(locationId: Int) {
@@ -81,5 +68,4 @@ class LocationDetailViewModel @Inject constructor(
     private fun getLocationId(): Int {
         return _state.value.locationID
     }
-
 }
