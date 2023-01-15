@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import javax.inject.Inject
 
-
 @HiltViewModel
 class EpisodeDetailViewModel @Inject constructor(
     private val repository: RickAndMortyRepository
@@ -20,7 +19,6 @@ class EpisodeDetailViewModel @Inject constructor(
 
     private val _state = MutableStateFlow(EpisodeDetailState())
     val state: StateFlow<EpisodeDetailState> get() = _state
-
 
     fun getEpisodeDetail() {
 
@@ -33,18 +31,13 @@ class EpisodeDetailViewModel @Inject constructor(
                 viewModelScope.launch {
 
                     val response = repository.getEpisodeById(getEpisodeId()).toEpisodeByIdDetail()
-
                     _state.value = _state.value.copy(episodeDetailInfo = response)
-
-
                     val characterList = mutableListOf<CharactersDomain>()
                     response.characters.forEach { characterUrl ->
                         val characterId = (characterUrl.split("/"))[5].toInt()
-
                         val character =
                             repository.getCharacterDetailById(characterId).toCharactersDomain()
                         characterList.add(character)
-
                     }
 
                     _state.value = _state.value.copy(
@@ -53,8 +46,6 @@ class EpisodeDetailViewModel @Inject constructor(
                     _state.value = _state.value.copy(
                         isLoading = false
                     )
-
-
                 }
 
             } catch (e: Exception) {
@@ -65,8 +56,6 @@ class EpisodeDetailViewModel @Inject constructor(
                 )
             }
         }
-
-
     }
 
     fun setEpisodeId(id: Int) {
