@@ -15,7 +15,6 @@ import com.example.kotlin_course_project.viewmodel.ui.locations.adapter.Location
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-
 @AndroidEntryPoint
 class LocationDetailFragment : Fragment() {
 
@@ -30,16 +29,9 @@ class LocationDetailFragment : Fragment() {
     ): View {
         _binding = FragmentLocationDetailBinding.inflate(inflater, container, false)
         binding = _binding!!
-
-
-
         viewModel.setLocationID(locationID)
         viewModel.getLocationInfo()
-
-
         prepareAdapter(locationID)
-
-
 
         lifecycleScope.launch {
             viewModel.state.collectLatest {
@@ -54,16 +46,13 @@ class LocationDetailFragment : Fragment() {
             } else {
                 findNavController().popBackStack()
             }
-
         }
-
         return binding.root
     }
 
     private fun navigateToLocationList() {
         val action =
             LocationDetailFragment.actionToLocationList()
-
         findNavController().navigate(action)
     }
 
@@ -72,7 +61,6 @@ class LocationDetailFragment : Fragment() {
             LocationDetailFragment.actionToCharacterDetail(
                 locationArgs.characterID
             )
-
         findNavController().navigate(action)
     }
 
@@ -88,14 +76,12 @@ class LocationDetailFragment : Fragment() {
         )
         binding.recyclerView.adapter = adapter
 
-
         binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), spanCount)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
