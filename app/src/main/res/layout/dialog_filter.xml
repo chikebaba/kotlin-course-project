@@ -6,7 +6,6 @@
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -73,7 +72,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <TextView
                 android:id="@+id/textView"
@@ -202,7 +200,6 @@
 
             </RadioGroup>
 
-
             <Button
                 android:id="@+id/btnApply"
                 android:layout_width="match_parent"
@@ -225,9 +222,6 @@
                 app:layout_constraintBottom_toTopOf="@+id/btnApply"
                 app:layout_constraintTop_toBottomOf="@+id/rgGender"
                 tools:layout_editor_absoluteX="14dp" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </layout>
