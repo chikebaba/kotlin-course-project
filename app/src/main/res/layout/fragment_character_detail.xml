@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.kotlin_course_project.viewmodel.CharacterDetailViewModel" />
@@ -66,7 +65,6 @@
                         app:layout_constraintVertical_bias="0.666"
                         tools:text="Rick Sanchez" />
 
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.appcompat.widget.Toolbar>
 
@@ -93,7 +91,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardView"
                     android:layout_width="150dp"
@@ -103,7 +100,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/imageView">
-
 
                 </androidx.cardview.widget.CardView>
 
@@ -119,7 +115,6 @@
                     app:layout_constraintStart_toStartOf="@+id/cardView"
                     app:layout_constraintTop_toTopOf="@+id/cardView"
                     tools:src="@tools:sample/avatars" />
-
 
                 <LinearLayout
                     android:id="@+id/linearLayout"
@@ -149,7 +144,6 @@
                         app:layout_constraintTop_toBottomOf="@+id/cardView"
                         tools:text="Alive" />
 
-
                     <TextView
                         android:id="@+id/characterName"
                         android:layout_width="match_parent"
@@ -172,7 +166,6 @@
                         android:textColor="#8E8E93"
                         app:layout_constraintTop_toBottomOf="@id/characterName"
                         tools:text="Human" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -292,20 +285,15 @@
                             android:textAppearance="@style/TextAppearance.subtitle1"
                             android:textColor="#6E798C"
                             tools:text="Earth (Replacement Dimension)" />
-
                     </LinearLayout>
-
 
                     <View
                         android:id="@+id/divider4"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/light_black" />
-
-
                 </LinearLayout>
-
-
+                
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -346,12 +334,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/episodesText" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 </layout>
