@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-
 @HiltViewModel
 class CharacterDetailViewModel @Inject constructor(
     private val repository: RickAndMortyRepository
@@ -17,7 +16,6 @@ class CharacterDetailViewModel @Inject constructor(
 
     private val _state = MutableStateFlow(CharacterDetailState())
     val state: StateFlow<CharacterDetailState> get() = _state
-
 
     private fun getCharacter(characterID: Int) {
 
@@ -29,11 +27,7 @@ class CharacterDetailViewModel @Inject constructor(
             )
 
             val episodeList = _state.value.character!!.episode
-
-
             val list: MutableList<EpisodeDomain> = mutableListOf()
-
-
 
             episodeList.let {
                 _state.value = _state.value.copy(isLoadingEpisodeInfo = true)
@@ -44,19 +38,13 @@ class CharacterDetailViewModel @Inject constructor(
                     val episode = repository.getEpisodeById(episodeId.toInt())
 
                     list.add(episode.toEpisodeDomain())
-
-
                 }
-
                 _state.value = _state.value.copy(
                     episodeList = list,
                     isLoadingEpisodeInfo = false
                 )
             }
-
-
         }
-
     }
 
     fun setCharacterId(id: Int) {
@@ -64,7 +52,6 @@ class CharacterDetailViewModel @Inject constructor(
             characterIdFromCharacterListFragment = id
         )
     }
-
 
     fun getCharacterInvoke() {
         getCharacter(getCharacterIDFromFragmentList())
@@ -93,5 +80,4 @@ class CharacterDetailViewModel @Inject constructor(
     fun getLocationUrl(): String? {
         return this.state.value.character?.location?.url
     }
-
 }
