@@ -3,11 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="clickListener"
             type="android.view.View.OnClickListener" />
-
         <variable
             name="location"
             type="com.example.kotlin_course_project.viewmodel.domain.LocationDomain" />
@@ -38,7 +36,6 @@
                 android:textColor="#6E798C"
                 tools:text="Planet" />
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -46,12 +43,7 @@
                 android:text="@{location.name}"
                 android:textAppearance="@style/TextAppearance.subtitle1"
                 android:textColor="@color/basic_black"
-
                 tools:text="Earth (C-137)" />
-
-
         </LinearLayout>
-
     </com.google.android.material.card.MaterialCardView>
-
 </layout>
