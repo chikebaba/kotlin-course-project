@@ -13,7 +13,6 @@ import com.example.kotlin_course_project.databinding.FragmentCharacterDetailBind
 import com.example.kotlin_course_project.viewmodel.ui.episodes.adapter.EpisodesAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class CharacterDetailFragment : Fragment() {
 
@@ -56,21 +55,13 @@ class CharacterDetailFragment : Fragment() {
                     navigateToLocationDetail(viewModel.getNavigationLocationID()!!)
                     viewModel.displayDetailComplete()
                 }
-
-
             }
-
         }
-
         binding.imageButton.setOnClickListener {
             findNavController().popBackStack()
         }
-
-
         return binding.root
     }
-
-
     private fun navigateToLocationDetail(locationID: Int) {
         val action =
             CharacterDetailFragmentDirections.actionToLocationDetail(
@@ -78,19 +69,13 @@ class CharacterDetailFragment : Fragment() {
                 false
             )
         action.characterID = viewModel.getCharacterIDFromFragmentList()
-
         findNavController().navigate(action)
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }
