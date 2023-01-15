@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.kotlin_course_project.viewmodel.ui.episodes.EpisodeDetailViewModel" />
@@ -23,7 +22,7 @@
                 android:layout_height="match_parent"
                 app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
                 >
-
+                
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
@@ -100,7 +99,6 @@
                         android:textSize="16sp"
                         tools:text="January 13, 2014" />
 
-
                     <TextView
                         android:id="@+id/episodeName"
                         android:layout_width="match_parent"
@@ -120,22 +118,14 @@
                         android:textColor="#6E798C"
                         android:textSize="16sp"
                         tools:text="S01E04" />
-
                 </LinearLayout>
-
             </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-
-
         </com.google.android.material.appbar.AppBarLayout>
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
-
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="match_parent"
@@ -160,9 +150,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7"
                 app:layout_constraintVertical_bias="1.0"
-                tools:listitem="@layout/character_item_rcw"
-
-                />
+                tools:listitem="@layout/character_item_rcw"/>
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -186,10 +174,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
 </layout>
